@@ -16,19 +16,8 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
     // your code here!
 
-    // Player input check
-    while (playerSelection !== 'rock' || playerSelection !== 'paper' || playerSelection !== 'scissors') {
-        playerSelection = prompt("Choose: rock, paper, or scissors").toLowerCase();
-
-        if (playerSelection === 'rock' || playerSelection === 'paper' || playerSelection === 'scissors'){
-            break;
-        }
-    }
-
     // Ties
-    if ((playerSelection === 'rock' && computerSelection === 'rock') || 
-    (playerSelection === 'paper' && computerSelection === 'paper') || 
-    (playerSelection === 'scissors' && computerSelection === 'scissors')){
+    if (playerSelection === computerSelection){
         return "It's a tie!";
     }
     // Player Wins
@@ -41,12 +30,42 @@ function playRound(playerSelection, computerSelection) {
     else {
         return "You Lose! " + (computerSelection[0].toUpperCase() + computerSelection.slice(1)) + " beats " + (playerSelection[0].toUpperCase() + playerSelection.slice(1));
     }
+}
 
-  }
+function game() {
+    let playerScore = 0;
+    let computerScore = 0;
 
-let playerSelection = prompt("Choose: rock, paper, or scissors").toLowerCase();
-const computerSelection = getComputerChoice();
+    while (playerScore < 3 && computerScore < 3){
+        let playerSelection = prompt("Choose: rock, paper, or scissors").toLowerCase();
+        
+        // Player input check
+        // while (playerSelection !== 'rock' || playerSelection !== 'paper' || playerSelection !== 'scissors') {
+        //     playerSelection = prompt("Choose: rock, paper, or scissors").toLowerCase();
+        // }
 
-const result = playRound(playerSelection, computerSelection);
+        const computerSelection = getComputerChoice();
+
+        let round = playRound(playerSelection, computerSelection);
+
+        console.log(round);
+
+        if (round.slice(4,8) === 'Lose'){
+            computerScore++;
+        }
+        else if (round.slice(4,7) === 'Win'){
+            playerScore++;
+        }
+    }
+
+    if (playerScore > computerScore){
+        return "You Win!";
+    }
+    else {
+        return "You Lose!";
+    }
+}
+
+const result = game();
 
 console.log(result);
