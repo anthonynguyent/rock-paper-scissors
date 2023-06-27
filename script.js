@@ -40,9 +40,11 @@ function game() {
         let playerSelection = prompt("Choose: rock, paper, or scissors").toLowerCase();
         
         // Player input check
-        // while (playerSelection !== 'rock' || playerSelection !== 'paper' || playerSelection !== 'scissors') {
-        //     playerSelection = prompt("Choose: rock, paper, or scissors").toLowerCase();
-        // }
+        if (playerSelection !== 'rock' && playerSelection !== 'paper' && playerSelection !== 'scissors') {
+            while (playerSelection !== 'rock' && playerSelection !== 'paper' && playerSelection !== 'scissors'){
+                playerSelection = prompt("Choose: rock, paper, or scissors").toLowerCase();
+            }
+        }
 
         const computerSelection = getComputerChoice();
 
@@ -59,10 +61,10 @@ function game() {
     }
 
     if (playerScore > computerScore){
-        return "You Win!";
+        return "You Win! Score: " + playerScore + " - " + computerScore;
     }
     else {
-        return "You Lose!";
+        return "You Lose! Score: " + playerScore + " - " + computerScore;
     }
 }
 
