@@ -5,6 +5,7 @@ This is a simple rock-paper-scissors game implemented using HTML and JavaScript.
 ## Technologies Used
 - HTML5
 - Javascript
+- Visual Studio Code
 
 ## Features
 
