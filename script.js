@@ -13,9 +13,8 @@ function getComputerChoice() {
     }
 }
 
-function playRockPaperScissors() {
-    let playerSelection = prompt("Choose: rock, paper, or scissors").toLowerCase();
-    const computerSelection = getComputerChoice();
+function playRound(playerSelection, computerSelection) {
+    // your code here!
 
     // Player input check
     while (playerSelection !== 'rock' || playerSelection !== 'paper' || playerSelection !== 'scissors') {
@@ -42,8 +41,12 @@ function playRockPaperScissors() {
     else {
         return "You Lose! " + (computerSelection[0].toUpperCase() + computerSelection.slice(1)) + " beats " + (playerSelection[0].toUpperCase() + playerSelection.slice(1));
     }
-}
 
+  }
 
+let playerSelection = prompt("Choose: rock, paper, or scissors").toLowerCase();
+const computerSelection = getComputerChoice();
 
-console.log(playRockPaperScissors());
+const result = playRound(playerSelection, computerSelection);
+
+console.log(result);
