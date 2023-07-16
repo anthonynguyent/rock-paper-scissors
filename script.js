@@ -18,23 +18,30 @@ function playRound(playerSelection) {
 
     computerSelection = getComputerChoice();
 
-    // Update result div with the game outcome
-    // resultDiv.textContent = `Player chose ${playerSelection}. Computer chose ${computerSelection}. `;
+    // roundResult string
+    let roundResult;
 
     // Ties
     if (playerSelection === computerSelection){
-        return "It's a tie!";
+        // return "It's a tie!";
+        roundResult = "It's a tie!";
     }
     // Player Wins
     else if ((playerSelection === 'rock' && computerSelection === 'scissors') || 
     (playerSelection === 'scissors' && computerSelection === 'paper') || 
     (playerSelection === 'paper' && computerSelection === 'rock')){
-        return "You Win! " + (playerSelection[0].toUpperCase() + playerSelection.slice(1)) + " beats " + (computerSelection[0].toUpperCase() + computerSelection.slice(1));
+        // return "You Win! " + (playerSelection[0].toUpperCase() + playerSelection.slice(1)) + " beats " + (computerSelection[0].toUpperCase() + computerSelection.slice(1));
+
+        roundResult = "You Win! " + (playerSelection[0].toUpperCase() + playerSelection.slice(1)) + " beats " + (computerSelection[0].toUpperCase() + computerSelection.slice(1));
     }
     // Player Loses
     else {
-        return "You Lose! " + (computerSelection[0].toUpperCase() + computerSelection.slice(1)) + " beats " + (playerSelection[0].toUpperCase() + playerSelection.slice(1));
+        // return "You Lose! " + (computerSelection[0].toUpperCase() + computerSelection.slice(1)) + " beats " + (playerSelection[0].toUpperCase() + playerSelection.slice(1));
+
+        roundResult = "You Lose! " + (computerSelection[0].toUpperCase() + computerSelection.slice(1)) + " beats " + (playerSelection[0].toUpperCase() + playerSelection.slice(1));
     }
+    
+    result.textContent = roundResult;
 }
 
 // function game() {
@@ -76,6 +83,8 @@ function playRound(playerSelection) {
 const rockButton = document.querySelector("#rock");
 const paperButton = document.querySelector("#paper");
 const scissorsButton = document.querySelector("#scissors");
+
+const result = document.querySelector(".result");
 
 // Replace console.log statements with DOM methods
 // const resultDiv = document.getElementById("result");
