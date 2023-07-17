@@ -115,8 +115,8 @@ const rockButton = document.querySelector("#rock");
 const paperButton = document.querySelector("#paper");
 const scissorsButton = document.querySelector("#scissors");
 
-const result = document.querySelector(".result");
-const score = document.querySelector(".score");
+const result = document.querySelector("#result");
+const score = document.querySelector("#score");
 
 rockButton.addEventListener("click", () => {
     playRound("rock"); // Call the playRound function with the correct playerSelection
