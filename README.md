@@ -35,3 +35,6 @@ You can view a live demo of the project [here](https://anthonynguyent.github.io/
 
 ![Player Lose](screenshots/lose.png)
 *Player Loses*
+
+![Updated UI](screenshots/updatedUI.png)
+*UI with buttons, running score, and result screen*
